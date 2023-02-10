@@ -25,7 +25,7 @@ class _ScrollBar_SizedBoxState extends State<ScrollBar_SizedBox> {
               Container(height: 40, width: 60, color: Colors.pink,),SizedBox(height: 10,),
               Container(height: 40, width: 60, color: Colors.green,),SizedBox(height: 10,),
               Container(height: 40, width: 60, color: Colors.pink,),SizedBox(height: 10,),
-              Container(height: 400, width: 60, color: Colors.yellow,),SizedBox(height: 10,),
+              Container(height: 30, width: 60, color: Colors.yellow,),SizedBox(height: 10,),
               Text("Hello",style: TextStyle(fontSize: 50,color: Colors.redAccent),),SizedBox(height: 10,),
               Container(height: 40, width: 60, color: Colors.pink,),SizedBox(height: 10,),
               Container(height: 500, width: 60, color: Colors.yellow,),SizedBox(height: 10,),
