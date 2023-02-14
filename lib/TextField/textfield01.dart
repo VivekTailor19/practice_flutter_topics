@@ -8,6 +8,9 @@ class TextField01 extends StatefulWidget {
 }
 
 class _TextField01State extends State<TextField01> {
+
+  TextEditingController email = TextEditingController();
+  String data = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,22 +26,35 @@ class _TextField01State extends State<TextField01> {
       ),
       body: Column(
         children: [
-          SizedBox(height: 10,),
           Container(
             height: 50,
             width: 500,
-            child: TextField(
-                decoration: InputDecoration(
-                  focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.red,)),
-                  border: OutlineInputBorder(),
-                  hintText: "ENTER EMAIL ID",
-                  //label: Text("E-Mail"),
-                  prefixIcon: Icon(Icons.contact_mail),
-                  suffixIcon: Icon(Icons.send_and_archive)
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                controller: email,
+                  decoration: InputDecoration(
+                    focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue,)),
+                    border: OutlineInputBorder(),
+                    hintText: "ENTER EMAIL ID",
+                    //label: Text("E-Mail"),
+                    prefixIcon: Icon(Icons.contact_mail),
+                    suffixIcon: Icon(Icons.send_and_archive)
 
-                ),
+                  ),
+              ),
+
             ),
-          )
+          ),
+          SizedBox(height: 50,),
+          ElevatedButton(onPressed: (){setState(() {
+            data = email.text;
+
+          });}, child: Text("Submit")),
+          SizedBox(height: 25,),
+          Text("$data"),
+
+
         ],
       ),
     );
