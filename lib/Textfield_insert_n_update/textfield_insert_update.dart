@@ -59,12 +59,13 @@ class _Textfield_Insert_UpdateState extends State<Textfield_Insert_Update> {
                   });}, child: Text("Submit")),
 
                   SizedBox(height: 25,),
-                  Container(
-                    width: 30,
-                    height: 40,
-                    child: Text("$l",),
+                  Column(
+                    children:
+                    l.asMap().entries.map((e) => (null)).toList(),
 
                   ),
+
+
 
 
                  // Text("$name"),
@@ -75,5 +76,16 @@ class _Textfield_Insert_UpdateState extends State<Textfield_Insert_Update> {
         ),
       ),
     );
+
   }
+  Widget list(String name) {
+    return Container(
+      height: 90,
+      width: double.infinity,
+      color: Colors.teal,
+      alignment: Alignment.center,
+      child: Text("$name", style: TextStyle(fontSize: 25),),
+    );
+  }
+
 }
