@@ -13,7 +13,7 @@ class _Textfield_Insert_UpdateState extends State<Textfield_Insert_Update> {
 
   TextEditingController username = TextEditingController();
   String name = "";
-
+  List l = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,7 +59,15 @@ class _Textfield_Insert_UpdateState extends State<Textfield_Insert_Update> {
                   });}, child: Text("Submit")),
 
                   SizedBox(height: 25,),
-                  Text("$name"),
+                  Container(
+                    width: 30,
+                    height: 40,
+                    child: Text("$l",),
+
+                  ),
+
+
+                 // Text("$name"),
 
               ],
             ),
