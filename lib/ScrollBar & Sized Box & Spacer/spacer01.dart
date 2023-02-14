@@ -27,6 +27,8 @@ class _Spacer01State extends State<Spacer01> {
             Spacer(),
 
             Container(height: 40, width: 60, color: Colors.green,),SizedBox(height: 10,),
+            Container(height: 40, width: 60, color: Colors.yellow,),
+            Container(height: 40, width: 60, color: Colors.black,),
 
           ],
         ),
