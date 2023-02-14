@@ -24,38 +24,52 @@ class _TextField01State extends State<TextField01> {
         ),
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-          Container(
-            height: 50,
-            width: 500,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextField(
-                controller: email,
-                  decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue,)),
-                    border: OutlineInputBorder(),
-                    hintText: "ENTER EMAIL ID",
-                    //label: Text("E-Mail"),
-                    prefixIcon: Icon(Icons.contact_mail),
-                    suffixIcon: Icon(Icons.send_and_archive)
+      body: Center(
+        child: Column(
+          children: [
+            Container(
+              height: 50,
+              width: 500,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextField(
+                  onChanged: (value) {
+                    setState(() {
+                      data = value;
 
-                  ),
+                    });
+                  },
+                  //controller: email,    //for get output after press
+                    decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue,)),
+                      border: OutlineInputBorder(),
+                      hintText: "ENTER EMAIL ID",
+                      //label: Text("E-Mail"),
+                      prefixIcon: Icon(Icons.contact_mail),
+                      suffixIcon: Icon(Icons.send_and_archive),
+                    ),
+
+                ),
+
               ),
-
             ),
-          ),
-          SizedBox(height: 50,),
-          ElevatedButton(onPressed: (){setState(() {
-            data = email.text;
-
-          });}, child: Text("Submit")),
-          SizedBox(height: 25,),
-          Text("$data"),
+            SizedBox(height: 50,),
 
 
-        ],
+             ElevatedButton(onPressed: (){setState(() {
+              data = email.text;
+            });}, child: Text("Submit")),
+
+
+
+
+
+            SizedBox(height: 25,),
+            Text("$data"),
+
+
+          ],
+        ),
       ),
     );
   }
