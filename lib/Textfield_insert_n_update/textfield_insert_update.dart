@@ -25,14 +25,14 @@ class _Textfield_Insert_UpdateState extends State<Textfield_Insert_Update> {
         child: Center(
           child: Column(
             children: [
+              SizedBox(height: 20,),
               Container(
-                width: 250,
+                width: double.infinity,
                 height: 500,
-                color: Colors.redAccent.shade100,
                 child: TextField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                      focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+                      focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(50)),
                       prefixIcon: Icon(Icons.person_outline),
                       suffixIcon: Icon(Icons.send),
                       label: Text("User Name"),
