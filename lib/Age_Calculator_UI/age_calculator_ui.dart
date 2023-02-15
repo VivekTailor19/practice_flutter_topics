@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:io';
 
 class Age_Calculator_UI extends StatefulWidget {
   const Age_Calculator_UI({Key? key}) : super(key: key);
@@ -8,6 +9,13 @@ class Age_Calculator_UI extends StatefulWidget {
 }
 
 class _Age_Calculator_UIState extends State<Age_Calculator_UI> {
+
+  TextEditingController fyear = TextEditingController();
+  TextEditingController lyear = TextEditingController();
+  int? x ;
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,6 +50,7 @@ class _Age_Calculator_UIState extends State<Age_Calculator_UI> {
               height: 5,
             ),
             Container(
+
               margin: EdgeInsets.symmetric(horizontal: 15),
               padding: EdgeInsets.symmetric(horizontal: 10),
               height: 300,
@@ -64,9 +73,13 @@ class _Age_Calculator_UIState extends State<Age_Calculator_UI> {
                     height: 5,
                   ),
                   Container(
-                    height: 35,
+
+                    height: 70,
                     width: double.infinity,
+                    alignment: Alignment.center,
+
                     child: TextField(
+                      controller: fyear ,
                         decoration: InputDecoration(
                       focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.white)),
@@ -76,7 +89,7 @@ class _Age_Calculator_UIState extends State<Age_Calculator_UI> {
                         Icons.calendar_month,
                         color: Colors.white,
                       ),
-                      suffixIcon: GestureDetector(
+                      suffixIcon: InkWell(
                         onTap: () {
                           setState(() {
                           //  pyear=year.text;
@@ -100,49 +113,53 @@ class _Age_Calculator_UIState extends State<Age_Calculator_UI> {
                     height: 5,
                   ),
                   Container(
-                    height: 35,
+                    height: 70,
                     width: double.infinity,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: TextField(
-                          decoration: InputDecoration(
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white)),
-                        border: OutlineInputBorder(),
-                        hintText: "Enter Current Year",
-                        prefixIcon: Icon(
-                          Icons.calendar_month,
-                          color: Colors.white,
-                        ),
-                            suffixIcon: GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                   // lyear=year.text;
-
-                                  });
-                                },
-                                child: Icon(
-                                  Icons.arrow_circle_right,
-                                  color: Colors.white,
-                                )),
-                      )),
-                    ),
+                    alignment: Alignment.center,
+                    child: TextField(
+                        controller: lyear ,
+                        decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.white)),
+                      border: OutlineInputBorder(),
+                      hintText: "Enter Current Year",
+                      prefixIcon: Icon(
+                        Icons.calendar_month,
+                        color: Colors.white,
+                      ),
+                          suffixIcon: InkWell(
+                              onTap: () {
+                                setState(() {
+                                 // lyear=year.text;
+                                });
+                              },
+                              child: Icon(
+                                Icons.arrow_circle_right,
+                                color: Colors.white,
+                              )),
+                    )),
                   ),
                   Spacer(),
-                  Container(
-                      height: 35,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                          color: Colors.cyan,
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Center(
-                          child: Text(
-                        "Calculate AGE",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20),
-                      ))),
+                  InkWell(onTap: () {
+                    setState(() {
+
+                    });
+                  },
+                    child: Container(
+                        height: 35,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                            color: Colors.cyan,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Center(
+                            child: Text(
+                          "Calculate AGE",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20),
+                        ))),
+                  ),
                   SizedBox(
                     height: 5,
                   )
