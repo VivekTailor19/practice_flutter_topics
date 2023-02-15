@@ -71,11 +71,22 @@ class _Age_Calculator_UIState extends State<Age_Calculator_UI> {
                       focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.white)),
                       border: OutlineInputBorder(),
-                      hintText: "Enter Year ",
+                      hintText: "Enter Date of Birth Year ",
                       prefixIcon: Icon(
                         Icons.calendar_month,
                         color: Colors.white,
                       ),
+                      suffixIcon: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                          //  pyear=year.text;
+
+                          });
+                        },
+                          child: Icon(
+                        Icons.arrow_circle_right,
+                        color: Colors.white,
+                      )),
                     )),
                   ),
                   SizedBox(
@@ -91,22 +102,39 @@ class _Age_Calculator_UIState extends State<Age_Calculator_UI> {
                   Container(
                     height: 35,
                     width: double.infinity,
-                    child: TextField(
-                        decoration: InputDecoration(
-                      focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white)),
-                      border: OutlineInputBorder(),
-                      prefixIcon: Icon(
-                        Icons.calendar_month,
-                        color: Colors.white,
-                      ),
-                    )),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: TextField(
+                          decoration: InputDecoration(
+                        focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white)),
+                        border: OutlineInputBorder(),
+                        hintText: "Enter Current Year",
+                        prefixIcon: Icon(
+                          Icons.calendar_month,
+                          color: Colors.white,
+                        ),
+                            suffixIcon: GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                   // lyear=year.text;
+
+                                  });
+                                },
+                                child: Icon(
+                                  Icons.arrow_circle_right,
+                                  color: Colors.white,
+                                )),
+                      )),
+                    ),
                   ),
                   Spacer(),
                   Container(
                       height: 35,
                       width: double.infinity,
-                      decoration: BoxDecoration(color: Colors.cyan,borderRadius: BorderRadius.circular(10)),
+                      decoration: BoxDecoration(
+                          color: Colors.cyan,
+                          borderRadius: BorderRadius.circular(10)),
                       child: Center(
                           child: Text(
                         "Calculate AGE",
@@ -115,31 +143,38 @@ class _Age_Calculator_UIState extends State<Age_Calculator_UI> {
                             fontWeight: FontWeight.bold,
                             fontSize: 20),
                       ))),
-                  SizedBox(height: 5,)
+                  SizedBox(
+                    height: 5,
+                  )
                 ],
               ),
-            ),  // First
-            SizedBox(height: 40,),
+            ), // First BOX
+            SizedBox(
+              height: 40,
+            ),
             Text(
               "--- ANSWER ---",
-              style: TextStyle(color: Colors.black,fontSize: 15,letterSpacing: 10),
+              style: TextStyle(
+                  color: Colors.black, fontSize: 15, letterSpacing: 10),
             ),
             Container(
-              height: 35,
-              width: double.infinity,
-              child: TextField(
-                  decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white)),
-                    border: OutlineInputBorder(),
-                    prefixIcon: Icon(
-                      Icons.question_answer_outlined,
-                      color: Colors.lightBlueAccent,
-                    ),
-                  )),
-            ),
-            SizedBox(height: 5,)
-
+                margin: EdgeInsets.symmetric(horizontal: 15),
+                height: 35,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    color: Colors.cyan,
+                    borderRadius: BorderRadius.circular(25)),
+                child: Center(
+                    child: Text(
+                  "Year",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                ))), // Last BOX
+            SizedBox(
+              height: 5,
+            )
           ],
         ),
       ),
