@@ -12,7 +12,7 @@ class _Age_Calculator_UIState extends State<Age_Calculator_UI> {
 
   TextEditingController fyear = TextEditingController();
   TextEditingController lyear = TextEditingController();
-  int? x ;
+  int year = 0;
 
 
 
@@ -89,19 +89,14 @@ class _Age_Calculator_UIState extends State<Age_Calculator_UI> {
                         Icons.calendar_month,
                         color: Colors.white,
                       ),
-                      suffixIcon: InkWell(
-                        onTap: () {
-                          setState(() {
-                          //  pyear=year.text;
+                      suffixIcon:
 
-                          });
-                        },
-                          child: Icon(
+                          Icon(
                         Icons.arrow_circle_right,
                         color: Colors.white,
                       )),
                     )),
-                  ),
+
                   SizedBox(
                     height: 10,
                   ),
@@ -127,23 +122,23 @@ class _Age_Calculator_UIState extends State<Age_Calculator_UI> {
                         Icons.calendar_month,
                         color: Colors.white,
                       ),
-                          suffixIcon: InkWell(
-                              onTap: () {
-                                setState(() {
-                                 // lyear=year.text;
-                                });
-                              },
-                              child: Icon(
+                          suffixIcon: Icon(
                                 Icons.arrow_circle_right,
                                 color: Colors.white,
                               )),
                     )),
-                  ),
+
                   Spacer(),
                   InkWell(onTap: () {
-                    setState(() {
+                    String fdata = fyear.text;
+                    String ldata = lyear.text;
+                    int fdate = int.parse(fdata);
+                    int ldate = int.parse(ldata);
 
-                    });
+                    setState((){year = ldate- fdate;});
+
+
+
                   },
                     child: Container(
                         height: 35,
@@ -183,7 +178,7 @@ class _Age_Calculator_UIState extends State<Age_Calculator_UI> {
                     borderRadius: BorderRadius.circular(25)),
                 child: Center(
                     child: Text(
-                  "Year",
+                  "$year",
                   style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
