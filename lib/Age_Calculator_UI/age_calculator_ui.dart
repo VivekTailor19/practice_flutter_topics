@@ -37,7 +37,7 @@ class _Age_Calculator_UIState extends State<Age_Calculator_UI> {
                   Icon(Icons.account_box, color: Colors.black, size: 20)
                 ],
               ),
-            ),      //AppBar
+            ), //AppBar
             SizedBox(
               height: 5,
             ),
@@ -53,24 +53,93 @@ class _Age_Calculator_UIState extends State<Age_Calculator_UI> {
                 //mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 10,),
-                  Text("Date of Birth",style: TextStyle(color: Colors.white),),
-                  SizedBox(height: 5,),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "Date of Birth",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
                   Container(
                     height: 35,
                     width: double.infinity,
                     child: TextField(
                         decoration: InputDecoration(
-                            focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.white)),
-                            border: OutlineInputBorder(),
-                            hintText: "Enter Year ",
-                            prefixIcon: Icon(Icons.screen_search_desktop,color: Colors.white,),
-                        )),
+                      focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.white)),
+                      border: OutlineInputBorder(),
+                      hintText: "Enter Year ",
+                      prefixIcon: Icon(
+                        Icons.calendar_month,
+                        color: Colors.white,
+                      ),
+                    )),
                   ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "Current Date",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Container(
+                    height: 35,
+                    width: double.infinity,
+                    child: TextField(
+                        decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.white)),
+                      border: OutlineInputBorder(),
+                      prefixIcon: Icon(
+                        Icons.calendar_month,
+                        color: Colors.white,
+                      ),
+                    )),
+                  ),
+                  Spacer(),
+                  Container(
+                      height: 35,
+                      width: double.infinity,
+                      decoration: BoxDecoration(color: Colors.cyan,borderRadius: BorderRadius.circular(10)),
+                      child: Center(
+                          child: Text(
+                        "Calculate AGE",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20),
+                      ))),
+                  SizedBox(height: 5,)
                 ],
               ),
+            ),  // First
+            SizedBox(height: 40,),
+            Text(
+              "--- ANSWER ---",
+              style: TextStyle(color: Colors.black,fontSize: 15,letterSpacing: 10),
             ),
+            Container(
+              height: 35,
+              width: double.infinity,
+              child: TextField(
+                  decoration: InputDecoration(
+                    focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white)),
+                    border: OutlineInputBorder(),
+                    prefixIcon: Icon(
+                      Icons.question_answer_outlined,
+                      color: Colors.lightBlueAccent,
+                    ),
+                  )),
+            ),
+            SizedBox(height: 5,)
+
           ],
         ),
       ),
