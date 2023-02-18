@@ -132,15 +132,13 @@ class _Age_Calculator_UIState extends State<Age_Calculator_UI> {
                   InkWell(onTap: () {
                     String fdata = fyear.text;
                     String ldata = lyear.text;
-                    int fdate = int.parse(fdata);
-                    int ldate = int.parse(ldata);
+                    int first = int.parse(fdata);
+                    int last = int.parse(ldata);
 
-                    setState((){year = ldate- fdate;});
+                    setState((){year = last- first;});
 
-
-
-                  },
-                    child: Container(
+                       },
+                      child: Container(
                         height: 35,
                         width: double.infinity,
                         decoration: BoxDecoration(
